@@ -14,23 +14,31 @@
 
 ### Links and Resources
 
-- back-end server url (when applicable)
-- front-end application (when applicable)
+[Link to Database](http://0.0.0.0:8000/api/v1/stands/)
+[Admin Login Page](http://0.0.0.0:8000/admin/)
 
 ### Setup
 
-.env requirements (where applicable)
-i.e.
+.venv for virtual environment
+.env requirements
 
-- PORT - Port Number
-- DATABASE_URL - URL to the running Postgres instance/db
+
+- PORT - 8000
+
+- DATABASE_URL - http://0.0.0.0:8000/api/v1/stands/
 
 #### How to initialize/run your application (where applicable)
-- e.g. python main.py
 
-#### How to use your library (where applicable)
+- > docker-compose up
+
+- > docker-compose down
+
+- > python manage.py runserver
 
 #### Tests
+
 - How do you run tests?
+
+  -```python manage.py test```
+
 - Any tests of note?
-- Describe any tests that you did not complete, skipped, etc
