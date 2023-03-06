@@ -3,8 +3,29 @@ version: '3'
 services:
   web:
     build: .
+    platform: linux/amd64
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
       - "8000:8000"
+
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+#  web:
+#    build: .
+#if i need to change the port it is forwarded to, I will need to swap it to 0.0.0.0:80
+#    command: python manage.py runserver 0.0.0.0:8000
+#    volumes:
+#      - .:/code
+#    ports:
+#may need to change the port for the postgres db to "8000:80" or "80:8000"
+#      - "8000:8000"
